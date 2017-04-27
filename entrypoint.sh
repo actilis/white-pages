@@ -12,7 +12,6 @@ LDAP_USER_BASE="${LDAP_USER_BASE:=ou=users},${LDAP_BASE}"
 LDAP_USER_FILTER="${LDAP_USER_FILTER:=(objectClass=user)}"
 LDAP_SIZE_LIMIT="${LDAP_SIZE_LIMIT:=100}"
 
-set | grep LDAP
 
 # Traitement du fichier de config pour application de nos variables
 sed \
@@ -31,4 +30,4 @@ chmod 440            /var/www/html/conf/config.inc.php
 
 
 . /etc/apache2/envvars
-/usr/sbin/apache2 -DFOREGROUND
+exec /usr/sbin/apache2 -DFOREGROUND

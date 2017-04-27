@@ -27,7 +27,7 @@ Default values are probably not suitable for your installation...
 Run a container using your init-ldap.txt to set environment variables. 
 
 ```shell
-docker run --rm -it --name test --hostname wp.local --env-file init-ldap.txt -p 8000:80 actilis/white-pages
+docker run -d --name white-pages --hostname wp.local --env-file init-ldap.txt -p 8000:80 actilis/white-pages
 ```
 
 Point your browser to http://your-docker-engine:8000/.
