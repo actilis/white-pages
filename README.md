@@ -11,7 +11,7 @@ Tune your ldap parameters in a init-ldap.txt file like this :
    LDAP_BASE=dc=example,dc=com
    LDAP_USER_BASE=ou=Users
    LDAP_USER_FILTER=(objectClass=inetOrgPerson)
-   #LDAP_SIZE_LIMIT=200
+   LDAP_SIZE_LIMIT=50
 ```
 
 
@@ -19,5 +19,5 @@ Tune your ldap parameters in a init-ldap.txt file like this :
 docker run --rm -it --name test --hostname wp.local --env-file init-ldap.txt -p 8000:80 actilis/white-pages
 ```
 
-Point your browser to http://your-docker-engine:8000/ and follow instructions.
+Point your browser to http://your-docker-engine:8000/.
 
